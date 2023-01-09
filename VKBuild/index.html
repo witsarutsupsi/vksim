@@ -12,7 +12,7 @@
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/VK Build.json", {onProgress: UnityProgress});
     </script>
 </head>
-<body>
+<body style="display: flex;">
 <div class="webgl-content">
     <div id="gameContainer" style="width: 1280px; height: 720px"></div>
 </div>
@@ -71,7 +71,7 @@
     function MSG_RunProgram(value)
     {
         x = value;
-        return (gameInstance.SendMessage("CameraVK", "ProgramRun", value));
+        return (gameInstance.SendMessage("$[KanomchanInput]", "ProgramRun", value));
     }
     //function CameraEnable(val)
     //{
@@ -87,11 +87,11 @@
 
     function MSG_LinearDirec(value)
     {
-          return (gameInstance.SendMessage("CameraVK", "KanomchanLinearDirec", value));
+          return (gameInstance.SendMessage("$[KanomchanInput]", "KanomchanLinearDirec", value));
     }
     function MSG_AngularDirec(value)
     {
-          return (gameInstance.SendMessage("CameraVK", "KanomchanAngularDirec", value));
+          return (gameInstance.SendMessage("$[KanomchanInput]", "KanomchanAngularDirec", value));
     }
     /////
     //Loop Time
